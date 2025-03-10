@@ -32,5 +32,6 @@ class FavoritesHandlerTestCase(AioHTTPTestCase):
         response = await self.client.get("/users/abc/favorites")
         self.assertEqual(response.status, 400)
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -26,7 +26,6 @@ class InventoryHandlerTestCase(AioHTTPTestCase):
         mock_sleep.assert_called_once_with(0)
 
     async def test_inventory_random(self):
-        # Тест с произвольной задержкой
         response = await self.client.get('/products/1/inventory')
 
         self.assertEqual(response.status, 200)

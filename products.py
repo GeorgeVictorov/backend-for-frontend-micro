@@ -16,7 +16,7 @@ async def products(request: Request) -> Response:
     db = request.app[DB_KEY]
     product_query = 'SELECT product_id, product_name FROM product'
     result = await db.fetch(product_query)
-    return web.json_response(dict(record) for record in result)
+    return web.json_response([dict(record) for record in result])
 
 
 app = web.Application()
