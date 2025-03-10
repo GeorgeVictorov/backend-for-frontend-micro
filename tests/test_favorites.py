@@ -1,8 +1,11 @@
 import unittest
+from unittest.mock import AsyncMock
+
 from aiohttp import web
 from aiohttp.test_utils import AioHTTPTestCase
-from unittest.mock import AsyncMock
+
 import favorites
+
 
 class FavoritesHandlerTestCase(AioHTTPTestCase):
     async def get_application(self):
