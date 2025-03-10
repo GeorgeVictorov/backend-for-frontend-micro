@@ -20,7 +20,7 @@ async def favorites(request: Request) -> Response:
         favorite_query = 'SELECT product_id from user_favorite where user_id = $1'
         result = await db.fetch(favorite_query, user_id)
         if result:
-            return web.json_response(dict(record) for record in result)
+            return web.json_response([dict(record) for record in result])
         else:
             raise web.HTTPNotFound()
     except ValueError:
