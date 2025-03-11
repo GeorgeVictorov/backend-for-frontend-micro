@@ -2,3 +2,4 @@
 .venv
 .env
 poetry.lock
+/cb_try.py
