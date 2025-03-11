@@ -20,8 +20,8 @@ CART_BASE = 'http://127.0.0.1:8003'
 async def all_products(request: Request) -> Response:
     async with aiohttp.ClientSession() as session:
         products = asyncio.create_task(session.get(f'{PRODUCT_BASE}/products'))
-        favorites = asyncio.create_task(session.get(f'{FAVORITE_BASE}/users/3/favorites'))
-        cart = asyncio.create_task(session.get(f'{CART_BASE}/users/3/cart'))
+        favorites = asyncio.create_task(session.get(f'{FAVORITE_BASE}/users/1/favorites'))
+        cart = asyncio.create_task(session.get(f'{CART_BASE}/users/1/cart'))
 
         requests = [products, favorites, cart]
         done, pending = await asyncio.wait(requests, timeout=1.0)
