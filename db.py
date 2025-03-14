@@ -16,11 +16,11 @@ async def create_db_pool(app: Application,
                                            user=user,
                                            database=database,
                                            password=password,
-                                           min_size=6,
+                                           min_size=1,
                                            max_size=6)
     app[DB_KEY] = pool
 
 
 async def destroy_db_pool(app: Application):
-    pool: Pool = await app[DB_KEY]
+    pool: Pool = app[DB_KEY]
     await pool.close()
